@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+</head>
+
+<body>
+    <div class="register">
+        <h1>Register</h1>
+        <div class="links">
+            <a href="{{ url_for('login') }}">Event Registration</a>
+            <a href="{{ url_for('register') }}" class="active">Student Registration</a>
+        </div>
+        <form action="{{ url_for('register') }}" method="post" autocomplete="off">
+            <label for="Name">
+                <i class="fas fa-user"></i>
+            </label>
+            <input type="text" name="Name" placeholder="Name" id="Name" required>
+            <label for="Roll Number">
+                <i class="fa fa-id-card"></i>
+            </label>
+            <input type="text" name="Roll Number" placeholder="Roll Number" id="Roll Number" required>
+            <label for="Contact">
+                <i class="fa fa-phone-square"></i>
+            </label>
+            <input type="text" name="Contact" placeholder="Contact" id="Contact" required>
+            <label for="email">
+                <i class="fas fa-envelope"></i>
+            </label>
+            <input type="email" name="email" placeholder="Email" id="email" required>
+            <div class="msg" style="color:red">{{ msg }}</div>
+            <input type="submit" value="Register">
+        </form>
+    </div>
+</body>
+
+</html>
